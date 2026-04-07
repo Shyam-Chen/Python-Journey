@@ -2,6 +2,14 @@
 
 🐍 From Zero to Hero, Open Source to Business Applications
 
+- 程式設計 (Programming)
+- 演算法 (Algorithms)
+- 數值計算 (`numpy`)
+- 資料框處理 (`polars`)
+- 資料視覺化 (`matplotlib`)
+- 機器學習 (`scikit-learn`)
+- 深度學習 (`torch`)
+
 ---
 
 # Gen AI Engineering
