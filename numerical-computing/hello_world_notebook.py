@@ -25,5 +25,12 @@ def _(np):
     return
 
 
+@app.cell
+def _(np):
+    arr_3d = np.ones((2, 3, 4))
+    print(arr_3d)
+    return
+
+
 if __name__ == "__main__":
     app.run()
