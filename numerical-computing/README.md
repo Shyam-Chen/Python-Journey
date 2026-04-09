@@ -88,15 +88,29 @@ np.dot(a, b)  # 32 (點積)
 
 ```py
 # ❌ 迭代器
-arr = np.arange(100)
-result = []
-for val in arr:
+arr_i = np.arange(10)
+result_i = []
+for val in arr_i:
     if val % 2 == 0:
-        result.append(val * 2)
+        result_i.append(val * 2)
     else:
-        result.append(val * 3)
+        result_i.append(val * 10)
+print(result_i)
 
 # ✅ 向量化
-arr = np.arange(100)
-result = np.where(arr % 2 == 0, arr * 2, arr * 3)
+arr_v = np.arange(10)
+result_v = np.where(arr_v % 2 == 0, arr_v * 2, arr_v * 10)
+print(result_v)
 ```
+
+```py
+# NumPy 標量在數值運算上與 Python int 相容
+np_val = np.int64(10)
+py_val = 10
+
+print(np_val + 5)    # 15
+print(py_val + 5)    # 15
+print(np_val == py_val)  # True
+```
+
+# 廣播 (Broadcasting)
