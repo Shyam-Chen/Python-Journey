@@ -53,7 +53,23 @@ print(empty_2d)
 #  [0. 0. 0.]]
 ```
 
-# 索引和切片
+```py
+arr = np.arange(1, 10, 2)
+```
+
+# 索引 (Indexing)
+
+```py
+arr = np.arange(10)
+arr[2]
+```
+
+## 切片 (Slicing)
+
+```py
+arr = np.arange(10)
+arr[3:7:2]
+```
 
 # 向量化 (Vectorization)
 
@@ -114,3 +130,18 @@ print(np_val == py_val)  # True
 ```
 
 # 廣播 (Broadcasting)
+
+```py
+a = np.array(
+    [
+        [10, 20, 30],
+        [40, 50, 60],
+        [70, 80, 90],
+    ]
+)
+b = np.array([1, 2, 3])
+print(a + b)
+# [[11 22 33]
+#  [41 52 63]
+#  [71 82 93]]
+```
