@@ -1,5 +1,5 @@
 def main():
-    print("Hello from my-jupyter-project!")
+    print("Hello from programming!")
 
 
 if __name__ == "__main__":

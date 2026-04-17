@@ -1,5 +1,5 @@
 ```sh
-uv add matplotlib seaborn
+uv add matplotlib
 ```
 
 ```py

@@ -13,3 +13,6 @@ dev = [
     "marimo>=0.23.0",
     "ruff>=0.15.9",
 ]
+
+[tool.ruff]
+line-length = 100
