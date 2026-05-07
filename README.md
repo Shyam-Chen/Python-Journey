@@ -2,13 +2,12 @@
 
 🐍 From Zero to Hero, Open Source to Business Applications
 
-1. 程式設計 (Programming)
-2. 演算法 (Algorithms)
-3. [數值運算 (Numerical Computing - `numpy`)](./numerical-computing/README.md)
-4. [資料處理 (Data Processing - `polars`)](./data-processing/README.md)
-5. [資料視覺化 (Data Visualization - `matplotlib`)](./data-visualization/README.md)
-6. [機器學習 (Machine Learning - `scikit-learn`)](./machine-learning/README.md)
-7. [深度學習 (Deep Learning - `torch`)](./deep-learning/README.md)
+1. [程式設計 (Programming - `marimo`)](./programming/README.md)
+2. [數值運算 (Numerical Computing - `numpy`)](./numerical-computing/README.md)
+3. [資料處理 (Data Processing - `polars`)](./data-processing/README.md)
+4. [資料視覺化 (Data Visualization - `matplotlib`)](./data-visualization/README.md)
+5. [機器學習 (Machine Learning - `scikit-learn`)](./machine-learning/README.md)
+6. [深度學習 (Deep Learning - `torch`)](./deep-learning/README.md)
 
 ---
 

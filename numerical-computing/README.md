@@ -1,7 +1,9 @@
-# 安裝與導入
+# 數值運算 (Numerical Computing)
+
+## 安裝與導入
 
 ```sh
-vu add numpy
+uv add numpy
 ```
 
 ```py
@@ -10,11 +12,66 @@ print(np.__version__)
 # 2.4.4
 ```
 
-# 執行
+## 執行
 
 ```sh
 uv run marimo edit
 ```
+
+---
+
+# 線性代數 (Linear Algebra)
+
+## 向量 (Vector)
+
+向量是線性代數的基本單位，可視為有方向與大小的量。
+
+```math
+\vec{v} = \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix}
+```
+
+```py
+# 建立向量
+v = np.array([1, 2, 3])
+w = np.array([4, 5, 6])
+
+# 向量加法
+print(v + w)  # [5 7 9]
+
+# 純量乘法
+print(3 * v)  # [3 6 9]
+
+# 內積 (Dot Product)
+print(np.dot(v, w))  # 1*4 + 2*5 + 3*6 = 32
+
+# 向量長度（L2 範數）
+print(np.linalg.norm(v))  # sqrt(1+4+9) ≈ 3.742
+```
+
+## 矩陣 (Matrix)
+
+```math
+A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}
+```
+
+```py
+# 建立矩陣
+A = np.array(
+    [
+        [1, 2],
+        [3, 4],
+    ]
+)
+
+B = np.array(
+    [
+        [5, 6],
+        [7, 8],
+    ]
+)
+```
+
+---
 
 # 建立和初始
 
