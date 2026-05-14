@@ -8,7 +8,7 @@
 2. [註解 (Comments)](#註解-comments)
 3. [變數 (Variables)](#變數-variables)
 4. 輸出 (Output)
-5. 資料型別 (Data Types)
+5. [資料型別 (Data Types)](#資料型別-data-types)
 6. 函式 (Functions)
 7. 控制流程 (Control Flow)
 8. 類別 (Classes)
@@ -226,6 +226,12 @@ def add():
 
 add()
 print(count)  # 1
+```
+
+## 資料型別 (Data Types)
+
+```sh
+$ uv run marimo edit data_types.py
 ```
 
 ## 日期與時間
