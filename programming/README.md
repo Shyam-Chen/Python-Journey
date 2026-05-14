@@ -65,7 +65,7 @@ $ uv run marimo edit
 程式碼格式化 (Formatter) 和靜態分析 (Linter)
 
 ```sh
-uv add ruff --dev
+$ uv add ruff --dev
 ```
 
 ```toml
@@ -79,13 +79,49 @@ select = ["I"]
 Lint:
 
 ```sh
-uv run ruff check --fix
+$ uv run ruff check --fix
 ```
 
 Format:
 
 ```sh
-uv run ruff format
+$ uv run ruff format
+```
+
+### 專案的依賴 (Dependencies)
+
+新增依賴：
+
+```sh
+$ uv add <DEPENDENCY_NAME>
+
+# 開發用
+$ uv add <DEPENDENCY_NAME> --dev
+```
+
+同步依賴 (安裝依賴)：
+
+```sh
+$ uv sync
+
+# 只同步正式環境用的依賴
+$ uv sync --no-dev
+```
+
+### 專案 Python 版本
+
+```sh
+# 查看可用的 Python 版本
+$ uv python list
+
+# 安裝目標 Python 版本
+$ uv python install 3.14
+
+# 固定新版本到專案
+$ uv python pin 3.14
+
+# 重新同步環境
+$ uv sync
 ```
 
 ## 註解 (Comments)
