@@ -4,7 +4,7 @@
 
 ### 目錄 (Table of Contents)
 
-1. [環境設置](#環境設置)
+1. [起手式 (Getting Started)](#起手式-getting-started)
 2. [註解 (Comments)](#註解-comments)
 3. [變數 (Variables)](#變數-variables)
 4. 輸出 (Output)
@@ -21,107 +21,10 @@
 
 ---
 
-## 環境設置
-
-### 安裝 UV
-
-Windows：
-
-```powershell
->_ winget install --id=astral-sh.uv  -e
-```
-
-macOS：
+## 起手式 (Getting Started)
 
 ```sh
-$ brew install uv
-```
-
-### 安裝 Python
-
-```sh
-$ uv python install 3.14
-```
-
-### 初始化專案
-
-```sh
-$ uv init <PROJECT_NAME>
-$ cd <PROJECT_NAME>
-```
-
-### 安裝和編輯 Notebook
-
-```sh
-$ uv add marimo --dev
-```
-
-```sh
-$ uv run marimo edit
-```
-
-### 安裝 Ruff
-
-程式碼格式化 (Formatter) 和靜態分析 (Linter)
-
-```sh
-$ uv add ruff --dev
-```
-
-```toml
-[tool.ruff]
-line-length = 100
-
-[tool.ruff.lint]
-select = ["I"]
-```
-
-Lint:
-
-```sh
-$ uv run ruff check --fix
-```
-
-Format:
-
-```sh
-$ uv run ruff format
-```
-
-### 專案的依賴 (Dependencies)
-
-新增依賴：
-
-```sh
-$ uv add <DEPENDENCY_NAME>
-
-# 開發用
-$ uv add <DEPENDENCY_NAME> --dev
-```
-
-同步依賴 (安裝依賴)：
-
-```sh
-$ uv sync
-
-# 只同步正式環境用的依賴
-$ uv sync --no-dev
-```
-
-### 專案 Python 版本
-
-```sh
-# 查看可用的 Python 版本
-$ uv python list
-
-# 安裝目標 Python 版本
-$ uv python install 3.14
-
-# 固定新版本到專案
-$ uv python pin 3.14
-
-# 重新同步環境
-$ uv sync
+$ uv run marimo edit getting_started.py
 ```
 
 ## 註解 (Comments)
@@ -229,6 +132,8 @@ print(count)  # 1
 ```
 
 ## 資料型別 (Data Types)
+
+[![Open in molab](https://molab.marimo.io/molab-shield.svg)](https://molab.marimo.io/notebooks/nb_D8eKCLswLnzHm6o2NH35Ub)
 
 ```sh
 $ uv run marimo edit data_types.py
