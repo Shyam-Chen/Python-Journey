@@ -1,23 +1,29 @@
 # 演算法 (Algorithms)
 
-- [陣列 (Array) / 字串 (String)](#陣列-array--字串-string)
-- [鏈結串列 (Linked List)]
-- [堆疊 (Stack)]
-- [佇列 (Queue)]
-- [雜湊表 (Hash Table)]
-- [二元樹 (Binary Tree)]
-- [二元搜尋樹 (Binary Search Tree)]
-- [平衡樹 (Balanced Tree, AVL / Red-Black Tree)]
-- [堆積 (Heap)]
-- [字典樹 (Trie)]
-- [圖 (Graph)]
-- [排序 (Sorting)]
-- [搜尋 (Searching)]
-- [分治 (Divide and Conquer)]
-- [回溯 (Backtracking)]
-- [動態規劃 (Dynamic Programming)]
-- [貪婪 (Greedy)]
-- [位元操作 (Bit Manipulation)]
+---
+
+### 目錄 (Table of Contents)
+
+1. [陣列 (Array) / 字串 (String)](#陣列-array--字串-string)
+2. [鏈結串列 (Linked List)]
+3. [堆疊 (Stack)]
+4. [佇列 (Queue)]
+5. [雜湊表 (Hash Table)]
+6. [二元樹 (Binary Tree)]
+7. [二元搜尋樹 (Binary Search Tree)]
+8. [平衡樹 (Balanced Tree, AVL / Red-Black Tree)]
+9. [堆積 (Heap)]
+10. [字典樹 (Trie)]
+11. [圖 (Graph)]
+12. [排序 (Sorting)]
+13. [搜尋 (Searching)]
+14. [分治 (Divide and Conquer)]
+15. [回溯 (Backtracking)]
+16. [動態規劃 (Dynamic Programming)]
+17. [貪婪 (Greedy)]
+18. [位元操作 (Bit Manipulation)]
+
+---
 
 ## 陣列 (Array) / 字串 (String)
 

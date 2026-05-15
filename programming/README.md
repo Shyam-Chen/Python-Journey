@@ -13,133 +13,41 @@
 7. 控制流程 (Control Flow)
 8. 類別 (Classes)
 9. 模組 (Modules)
-10. ...
+10. 例外處理 (Exceptions)
 11. 數學 (Math)
-12. [日期與時間](#日期與時間)
-13. [正規表達式](#正規表達式)
+12. [日期與時間 (Date and Time)](#日期與時間-date-and-time)
+13. [正規表達式 (Regular Expression)](#正規表達式-regular-expression)
 14. 檔案操作 (File Operations)
+15. 非同步 (Asynchronous)
+16. 套件管理器 (Package Manager)
 
 ---
 
 ## 起手式 (Getting Started)
 
-```sh
-$ uv run marimo edit getting_started.py
-```
+- 在線上瀏覽：Open in molab
+- 在本地瀏覽：`uv run marimo edit getting_started.py`
+- 在 VS Code 內瀏覽：[getting_started.py](./getting_started.py)
 
 ## 註解 (Comments)
 
-### 單行註解 `#`
-
-```py
-# 這是一個單行註解
-print("Hello, World!")  # 這也是註解，寫在程式碼後面
-
-# x = 10  ← 這行程式碼被註解掉了，所以不會被執行
-```
-
-### 多行註解 (連續 `#`)
-
-```py
-# 這是第一行註解
-# 這是第二行註解
-# 這是第三行註解
-print("多行註解")
-```
-
-### 文件字串 `"""..."""`
-
-```py
-def add(a, b):
-    """
-    這個函式用來計算兩數之和。
-
-    參數:
-        a: 第一個數字
-        b: 第二個數字
-
-    回傳:
-        兩數相加的結果
-    """
-    return a + b
-
-
-# 可以用 help() 查看文件字串
-help(add)
-```
+- 在線上瀏覽：Open in molab
+- 在本地瀏覽：`uv run marimo edit comments.py`
+- 在 VS Code 內瀏覽：[comments.py](./comments.py)
 
 ## 變數 (Variables)
 
-```py
-x = 10  # 整數
-name = "Alice"  # 字串
-pi = 3.14  # 浮點數
-is_ok = True  # 布林值
-
-# 單一前導底線
-# 表示「內部使用 (internal)」或「非公開 API」，是一種約定 (convention)
-_score = 100
-```
-
-```py
-x = 10  # x 是 int
-x = "Hello"  # x 變成 str
-x = 3.14  # x 變成 float
-
-print(type(x))  # <class 'float'>
-```
-
-```py
-# 同時賦值多個變數
-a, b, c = 1, 2, 3
-print(f"a = {a}, b = {b}, c = {c}")
-
-# 多個變數指向同一個值
-x = y = z = 0
-print(f"x = {x}, y = {y}, z = {z}")
-
-# 交換變數
-a, b = b, a
-print(f"a = {a}, b = {b}, c = {c}")
-```
-
-```py
-x = "global"  # 全域變數
-
-
-def my_fn():
-    x = "local"  # 區域變數 (只在函式內有效)
-    print(x)  # local
-
-
-my_fn()
-print(x)  # global
-```
-
-在函式內修改全域變數使用 `global` 關鍵字：
-
-```py
-count = 0
-
-
-def add():
-    global count
-    count += 1
-
-
-add()
-print(count)  # 1
-```
+- 在線上瀏覽：Open in molab
+- 在本地瀏覽：`uv run marimo edit variables.py`
+- 在 VS Code 內瀏覽：[variables.py](./variables.py)
 
 ## 資料型別 (Data Types)
 
-[![Open in molab](https://molab.marimo.io/molab-shield.svg)](https://molab.marimo.io/notebooks/nb_D8eKCLswLnzHm6o2NH35Ub)
+- 在線上瀏覽：[Open in molab](https://molab.marimo.io/notebooks/nb_D8eKCLswLnzHm6o2NH35Ub)
+- 在本地瀏覽：`uv run marimo edit data_types.py`
+- 在 VS Code 內瀏覽：[data_types.py](./data_types.py)
 
-```sh
-$ uv run marimo edit data_types.py
-```
-
-## 日期與時間
+## 日期與時間 (Date and Time)
 
 `datetime` 是 Python 內建的標準模組，用來處理**日期**與**時間**相關操作。
 
@@ -218,7 +126,7 @@ last_week = now - timedelta(weeks=1)
 two_hours_later = now + timedelta(hours=2)
 ```
 
-## 正規表達式
+## 正規表達式 (Regular Expression)
 
 `re` 是 Python 內建的標準模組，用來進行字串的搜尋、比對、擷取與替換。
 
