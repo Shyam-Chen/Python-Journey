@@ -10,11 +10,46 @@
 ---
 
 ```sh
-uv add scikit-learn
+$ uv add scikit-learn
 ```
 
 ```sh
-uv add catboost
+$ uv add catboost
+```
+
+#### 將訓練好的模型輸出成 ONNX (Open Neural Network Exchange, `.onnx`)
+
+```sh
+$ uv add skl2onnx
+```
+
+```py
+from skl2onnx import to_onnx
+
+model = <ESTIMATOR_OBJECT>
+model.fit(X, y)
+
+# 轉換成 ONNX (只要傳入一筆樣本，讓它自動推斷輸入型別)
+onx = to_onnx(model, X[:1])  # pandas
+onx = to_onnx(model_lr, X[:1].to_numpy())  # polars
+
+# 儲存成 .onnx 檔
+with open("model.onnx", "wb") as f:
+    f.write(onx.SerializeToString())
+```
+
+載入已儲存 .onnx 檔的並預測：
+
+```sh
+$ uv add onnxruntime
+```
+
+```py
+import onnxruntime as ort
+
+inference_session = ort.InferenceSession("model.onnx", providers=["CPUExecutionProvider"])
+outputs = inference_session.run(None, {"input": <INPUT_TENSOR>})
+print(outputs)
 ```
 
 ---
