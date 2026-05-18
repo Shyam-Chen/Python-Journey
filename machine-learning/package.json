@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "onnxruntime-node": "^1.26.0"
+  }
+}

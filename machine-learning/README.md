@@ -52,6 +52,16 @@ outputs = inference_session.run(None, {"input": <INPUT_TENSOR>})
 print(outputs)
 ```
 
+跨平台執行 (Node.js v24+)：
+
+```sh
+$ pnpm add onnxruntime-node
+```
+
+```sh
+$ node verify.ts
+```
+
 ---
 
 ## 回歸
