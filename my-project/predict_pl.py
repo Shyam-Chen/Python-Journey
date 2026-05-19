@@ -110,7 +110,6 @@ print("2026 年預測結果：")
 print("=" * 50)
 with pl.Config(tbl_rows=-1):
     print(data_2026.select(["月份", "專案數量", "預測工單_線性迴歸", "預測工單_隨機森林"]))
-
 print("\n" + "=" * 50)
 print("2026 年度總計預測：")
 print("=" * 50)
