@@ -38,6 +38,8 @@ with open("model.onnx", "wb") as f:
     f.write(onx.SerializeToString())
 ```
 
+參考：[`save.py`](./save.py)
+
 載入已儲存 .onnx 檔的並預測：
 
 ```sh
@@ -48,19 +50,31 @@ $ uv add onnxruntime
 import onnxruntime as ort
 
 inference_session = ort.InferenceSession("model.onnx", providers=["CPUExecutionProvider"])
-outputs = inference_session.run(None, {"input": <INPUT_TENSOR>})
-print(outputs)
+input_name = inference_session.get_inputs()[0].name
+pred = inference_session.run(None, {input_name: <INPUT_TENSOR>})[0]
+print(pred)
 ```
 
-跨平台執行 (Node.js v24+)：
+參考：[`verify.py`](./verify.py)
+
+跨平台執行使用 Node.js v24+：
 
 ```sh
 $ pnpm add onnxruntime-node
 ```
 
-```sh
-$ node verify.ts
+```ts
+import * as ort from 'onnxruntime-node';
+
+const inferenceSession = await ort.InferenceSession.create('model.onnx', {
+  executionProviders: ['cpu'],
+});
+
+const inputName = inferenceSession.inputNames[0];
+const results = await session.run({ [inputName]: <INPUT_TENSOR> });
 ```
+
+參考：[`verify.ts`](./verify.ts)
 
 ---
 
