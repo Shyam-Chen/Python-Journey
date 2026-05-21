@@ -25,25 +25,25 @@
 
 ## 起手式 (Getting Started)
 
-- 在線上瀏覽：Open in molab
+- 在線上瀏覽：[Open in molab](https://molab.marimo.io/notebooks/nb_iEBpU8X1KhzBZde3n58gfZ)
 - 在本地瀏覽：`uv run marimo edit getting_started.py`
 - 在 VS Code 內瀏覽：[getting_started.py](./getting_started.py)
 
 ## 註解 (Comments)
 
-- 在線上瀏覽：Open in molab
+- 在線上瀏覽：[Open in molab](https://molab.marimo.io/notebooks/nb_T5qtpSARdkCgHWquLVp1U7)
 - 在本地瀏覽：`uv run marimo edit comments.py`
 - 在 VS Code 內瀏覽：[comments.py](./comments.py)
 
 ## 變數 (Variables)
 
-- 在線上瀏覽：Open in molab
+- 在線上瀏覽：[Open in molab](https://molab.marimo.io/notebooks/nb_Wm2Dgx8SSbQKbKjvbHNUtG)
 - 在本地瀏覽：`uv run marimo edit variables.py`
 - 在 VS Code 內瀏覽：[variables.py](./variables.py)
 
 ## 輸出 (Output)
 
-- 在線上瀏覽：Open in molab
+- 在線上瀏覽：[Open in molab](https://molab.marimo.io/notebooks/nb_E49wcQ5D75EzTro5SZVNCL)
 - 在本地瀏覽：`uv run marimo edit output.py`
 - 在 VS Code 內瀏覽：[output.py](./output.py)
 
@@ -55,7 +55,7 @@
 
 ## 函式 (Functions)
 
-- 在線上瀏覽：Open in molab
+- 在線上瀏覽：[Open in molab](https://molab.marimo.io/notebooks/nb_nEAvcGtnCH7wZeESJRD7z7)
 - 在本地瀏覽：`uv run marimo edit functions.py`
 - 在 VS Code 內瀏覽：[functions.py](./functions.py)
 
