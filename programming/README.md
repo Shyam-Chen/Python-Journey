@@ -7,9 +7,9 @@
 1. [起手式 (Getting Started)](#起手式-getting-started)
 2. [註解 (Comments)](#註解-comments)
 3. [變數 (Variables)](#變數-variables)
-4. 輸出 (Output)
+4. [輸出 (Output)](#輸出-output)
 5. [資料型別 (Data Types)](#資料型別-data-types)
-6. 函式 (Functions)
+6. [函式 (Functions)](#函式-functions)
 7. 控制流程 (Control Flow)
 8. 類別 (Classes)
 9. 模組 (Modules)
@@ -41,11 +41,23 @@
 - 在本地瀏覽：`uv run marimo edit variables.py`
 - 在 VS Code 內瀏覽：[variables.py](./variables.py)
 
+## 輸出 (Output)
+
+- 在線上瀏覽：Open in molab
+- 在本地瀏覽：`uv run marimo edit output.py`
+- 在 VS Code 內瀏覽：[output.py](./output.py)
+
 ## 資料型別 (Data Types)
 
 - 在線上瀏覽：[Open in molab](https://molab.marimo.io/notebooks/nb_D8eKCLswLnzHm6o2NH35Ub)
 - 在本地瀏覽：`uv run marimo edit data_types.py`
 - 在 VS Code 內瀏覽：[data_types.py](./data_types.py)
+
+## 函式 (Functions)
+
+- 在線上瀏覽：Open in molab
+- 在本地瀏覽：`uv run marimo edit functions.py`
+- 在 VS Code 內瀏覽：[functions.py](./functions.py)
 
 ## 日期與時間 (Date and Time)
 
