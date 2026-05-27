@@ -10,16 +10,16 @@
 4. [輸出 (Output)](#輸出-output)
 5. [資料型別 (Data Types)](#資料型別-data-types)
 6. [函式 (Functions)](#函式-functions)
-7. 控制流程 (Control Flow)
-8. 類別 (Classes)
-9. 模組 (Modules)
+7. [控制流程 (Control Flow)](#控制流程-control-flow)
+8. [類別 (Classes)](#類別-classes)
+9. [模組 (Modules)](#模組-modules)
 10. 例外處理 (Exceptions)
 11. 數學 (Math)
 12. [日期與時間 (Date and Time)](#日期與時間-date-and-time)
 13. [正規表達式 (Regular Expression)](#正規表達式-regular-expression)
 14. 檔案操作 (File Operations)
 15. 非同步 (Asynchronous)
-16. 套件管理器 (Package Manager)
+16. [套件管理器 (Package Manager)](#套件管理器-package-manager)
 
 ---
 
@@ -58,6 +58,196 @@
 - 在線上瀏覽：[Open in molab](https://molab.marimo.io/notebooks/nb_nEAvcGtnCH7wZeESJRD7z7)
 - 在本地瀏覽：`uv run marimo edit functions.py`
 - 在 VS Code 內瀏覽：[functions.py](./functions.py)
+
+## 控制流程 (Control Flow)
+
+數學中的邏輯條件：
+
+```py
+a = 10
+b = 10
+
+if a == b:
+    print("a 等於 b")
+```
+
+行內簡寫 `if...else` (三元運算子 (Ternary Operator))：
+
+```py
+age = 18
+status = "已成年" if age >= 18 else "未成年"
+print(status)
+```
+
+邏輯運算子 (Logical Operators)：`and`、`or`、`not`
+
+`pass` 陳述句：
+
+```py
+a = 100
+b = 20
+
+if a > b:
+    pass
+```
+
+### `for` 迴圈
+
+```py
+# 迭代 List
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)
+
+for index, value in enumerate(fruits):
+    print(f"{index}: {value}")
+```
+
+### `while` 迴圈
+
+```py
+count = 0
+
+while count < 5:
+    print(count)
+    count += 1
+```
+
+`break` 陳述句：
+
+```py
+
+```
+
+### `match` 模式匹配
+
+```py
+
+```
+
+## 類別 (Classes)
+
+初始化物件 `__init__`：
+
+```py
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+alice = Person("Alice", 22)
+bob = = Person("Bob", 35)
+```
+
+### 類別方法 (Class Methods)
+
+當使用 `print() / str()` 時，`__str__`：
+
+```py
+
+```
+
+除錯時，`__repr__`：
+
+```py
+
+```
+
+### 繼承 (Inheritance)
+
+```py
+
+```
+
+### 封裝 (Encapsulation)
+
+```py
+class MyWord:
+    def __init__(self, foo, bar, baz):
+        self.foo = foo  # 公開屬性
+        self._bar = bar  # 受保護屬性
+        self.__bar = bar  # 私有屬性
+```
+
+### 多型 (Polymorphism)
+
+```py
+class Shape:
+    def area(self):
+        pass
+
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius**2
+
+
+class Rectangle(Shape):
+    def __init__(self, w, h):
+        self.w = w
+        self.h = h
+
+    def area(self):
+        return self.w * self.h
+
+
+shapes = [Circle(5), Rectangle(4, 6)]
+
+for shape in shapes:
+    print(f"面積：{shape.area()}")
+# 面積：78.5
+# 面積：24
+```
+
+## 模組 (Modules)
+
+```coffee
+.
+├── main.py
+├── fn
+│   └── math.py
+├── .python-version
+├── pyproject.toml
+└── uv.lock
+```
+
+```py
+# fn/math.py
+def add(a: int, b: int) -> int:
+    return a + b
+```
+
+```py
+# math.py
+from fn.math import add
+
+print(add(1, 2))
+```
+
+```sh
+$ uv run main.py
+```
+
+建立 `src` 資料夾：
+
+```coffee
+.
+├── src
+│   ├── main.py
+│   └── fn
+│       └── math.py
+├── .python-version
+├── pyproject.toml
+└── uv.lock
+```
+
+```sh
+$ uv run ./src/main.py
+```
 
 ## 日期與時間 (Date and Time)
 
@@ -205,4 +395,29 @@ print(pattern.sub("_", "abc123def456"))  # abc_def_
 
 ```py
 
+```
+
+## 套件管理器 (Package Manager)
+
+### 升級專案用 Python 版本
+
+```sh
+$ uv python list
+```
+
+```sh
+$ uv python install 3.15
+```
+
+```sh
+$ uv python pin 3.15
+```
+
+```toml
+# pyproject.toml
+requires-python = ">=3.15"
+```
+
+```sh
+$ uv sync
 ```
