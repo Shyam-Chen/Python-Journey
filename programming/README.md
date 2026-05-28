@@ -13,12 +13,12 @@
 7. [控制流程 (Control Flow)](#控制流程-control-flow)
 8. [類別 (Classes)](#類別-classes)
 9. [模組 (Modules)](#模組-modules)
-10. 例外處理 (Exceptions)
+10. [例外處理 (Exception Handling)](#例外處理-exception-handling)
 11. 數學 (Math)
 12. [日期與時間 (Date and Time)](#日期與時間-date-and-time)
 13. [正規表達式 (Regular Expression)](#正規表達式-regular-expression)
-14. 檔案操作 (File Operations)
-15. 非同步 (Asynchronous)
+14. [檔案操作 (File Operations)](#檔案操作-file-operations)
+15. [非同步 (Asynchronous)](#非同步-asynchronous)
 16. [套件管理器 (Package Manager)](#套件管理器-package-manager)
 
 ---
@@ -249,6 +249,82 @@ $ uv run main.py
 $ uv run ./src/main.py
 ```
 
+## 例外處理 (Exception Handling)
+
+```py
+try:
+    # 可能發生錯誤的程式碼
+    result = 10 / 0
+except ZeroDivisionError as e:
+    # 捕捉特定例外
+    print(f"捕捉到錯誤：{e}")
+finally:
+    # 無論如何都會執行 (常用於釋放資源)
+    print("程式結束")
+```
+
+| 例外名稱            | 觸發情境                 |
+| ------------------- | ------------------------ |
+| `ValueError`        | 傳入值型別正確但值不合法 |
+| `TypeError`         | 型別錯誤（如字串加整數） |
+| `ZeroDivisionError` | 除以零                   |
+| `IndexError`        | 串列索引超出範圍         |
+| `KeyError`          | 字典中不存在的鍵         |
+| `FileNotFoundError` | 開啟不存在的檔案         |
+| `AttributeError`    | 物件無此屬性或方法       |
+| `NameError`         | 使用未定義的變數         |
+| `ImportError`       | 模組無法匯入             |
+| `StopIteration`     | 迭代器沒有更多元素       |
+| `OverflowError`     | 數值運算結果太大         |
+| `RecursionError`    | 遞迴超出最大深度         |
+
+```py
+try:
+    num = int("abc")  # 無法轉換
+except ValueError as e:
+    print(f"ValueError：{e}")
+```
+
+捕捉多個例外：
+
+```py
+try:
+    x = int(input("輸入數字："))
+    result = 10 / x
+except ValueError:
+    print("請輸入有效數字！")
+except ZeroDivisionError:
+    print("不能除以零！")
+except (TypeError, NameError) as e:
+    # 同時捕捉多種例外
+    print(f"其他錯誤：{e}")
+```
+
+捕捉所有例外：
+
+```py
+try:
+    # 某些操作
+    pass
+except Exception as e:
+    # Exception 是大多數內建例外的父類別
+    print(f"發生錯誤：{type(e).__name__} - {e}")
+```
+
+主動拋出例外 `raise`：
+
+```py
+def divide(a, b):
+    if b == 0:
+        raise ValueError("除數不能為零！")  # 主動拋出
+    return a / b
+
+try:
+    divide(10, 0)
+except ValueError as e:
+    print(e)
+```
+
 ## 日期與時間 (Date and Time)
 
 `datetime` 是 Python 內建的標準模組，用來處理**日期**與**時間**相關操作。
@@ -394,8 +470,74 @@ print(pattern.sub("_", "abc123def456"))  # abc_def_
 `open()`, `os`, `pathlib`, `glob`
 
 ```py
-
+with open("filename.txt", "r", encoding="utf-8") as f:
+    content = f.read()
+# 離開 with 區塊後，檔案自動關閉
 ```
+
+```py
+with open("example.txt", "r", encoding="utf-8") as f:
+    # 一次讀取全部內容
+    content = f.read()
+    print(content)
+
+    # 逐行迭代
+    for line in f:
+        print(line.strip())
+```
+
+### 寫入檔案
+
+```py
+with open("output.txt", "w", encoding="utf-8") as f:
+    # 寫入單行
+    f.write("Hello, Python!\n")
+
+    # 寫入多行
+    f.writelines(["第一行\n", "第二行\n"])
+```
+
+讀取 → 取代 → 寫回：
+
+```py
+replacements = {
+    "蘋果": "Apple",
+    "香蕉": "Banana",
+    "橘子": "Orange",
+}
+
+with open("example.txt", "r", encoding="utf-8") as f:
+    content = f.read()
+
+for old, new in replacements.items():
+    content = content.replace(old, new)
+
+with open("example.txt", "w", encoding="utf-8") as f:
+    f.write(content)
+```
+
+## 非同步 (Asynchronous)
+
+```py
+import asyncio
+
+async def greet(name: str, delay: int):
+    print(f"[{name}] 開始...")
+    await asyncio.sleep(delay)  # 模擬 I/O 等待
+    print(f"[{name}] 完成！")
+
+async def main():
+    # 兩個任務「並發」執行，不是依序等待
+    await asyncio.gather(
+        greet("Task A", 2),
+        greet("Task B", 1),
+    )
+
+asyncio.run(main())
+```
+
+- 並發 (Concurrency)：多個任務「在時間上重疊」進行 (可以互相切換或交錯執行)，但不一定同時在同一瞬間執行。重點在「邏輯上同時有多個工作在進行」。
+- 並行 (Parallelism)：多個任務「在物理上同時」執行 (例如在多個 CPU 核心上同時跑)。重點在「實際同時執行」。
 
 ## 套件管理器 (Package Manager)
 
