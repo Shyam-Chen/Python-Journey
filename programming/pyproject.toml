@@ -10,6 +10,7 @@ dependencies = []
 dev = [
     "marimo>=0.23.4",
     "ruff>=0.15.12",
+    "ty>=0.0.46",
 ]
 
 [tool.ruff]

@@ -9,17 +9,18 @@
 3. [變數 (Variables)](#變數-variables)
 4. [輸出 (Output)](#輸出-output)
 5. [資料型別 (Data Types)](#資料型別-data-types)
-6. [函式 (Functions)](#函式-functions)
-7. [控制流程 (Control Flow)](#控制流程-control-flow)
-8. [類別 (Classes)](#類別-classes)
-9. [模組 (Modules)](#模組-modules)
-10. [例外處理 (Exception Handling)](#例外處理-exception-handling)
-11. 數學 (Math)
-12. [日期與時間 (Date and Time)](#日期與時間-date-and-time)
-13. [正規表達式 (Regular Expression)](#正規表達式-regular-expression)
-14. [檔案操作 (File Operations)](#檔案操作-file-operations)
-15. [非同步 (Asynchronous)](#非同步-asynchronous)
-16. [套件管理器 (Package Manager)](#套件管理器-package-manager)
+6. [型別提示 (Type Hints)](#型別提示-type-hints)
+7. [函式 (Functions)](#函式-functions)
+8. [控制流程 (Control Flow)](#控制流程-control-flow)
+9. [類別 (Classes)](#類別-classes)
+10. [模組 (Modules)](#模組-modules)
+11. [例外處理 (Exception Handling)](#例外處理-exception-handling)
+12. 數學 (Math)
+13. [日期與時間 (Date and Time)](#日期與時間-date-and-time)
+14. [正規表達式 (Regular Expression)](#正規表達式-regular-expression)
+15. [檔案操作 (File Operations)](#檔案操作-file-operations)
+16. [非同步 (Asynchronous)](#非同步-asynchronous)
+17. [套件管理器 (Package Manager)](#套件管理器-package-manager)
 
 ---
 
@@ -52,6 +53,61 @@
 - 在線上瀏覽：[Open in molab](https://molab.marimo.io/notebooks/nb_D8eKCLswLnzHm6o2NH35Ub)
 - 在本地瀏覽：`uv run marimo edit data_types.py`
 - 在 VS Code 內瀏覽：[data_types.py](./data_types.py)
+
+## 型別提示 (Type Hints)
+
+```sh
+$ uv add ty --dev
+```
+
+```py
+name: str = "Alice"
+age: int = 30
+is_active: bool = True
+```
+
+```py
+def get_names() -> list[str]:
+    return ["Alice", "Bob", "Carol"]
+
+
+def get_user_ages() -> dict[str, int]:
+    return {"Alice": 30, "Bob": 25, "Carol": 40}
+
+
+def get_coordinates() -> tuple[float, float]:
+    return (40.7128, -74.0060)
+```
+
+型別別名 (Type Alias)：
+
+```py
+type Age = int
+age: Age = 30
+```
+
+```py
+type Age = str
+age: Age = 30
+# ❌ error[invalid-assignment]: Object of type `Literal[30]` is not assignable to `Age`
+```
+
+聯合型別 (Union Types)：
+
+```py
+rate: int | str = 1
+```
+
+泛型 (Generics)：
+
+```py
+def first_element[T](items: list[T]) -> T:
+    return items[0]
+
+
+print(first_element([1, 2, 3]))  # 1
+print(first_element(["Alice", "Bob", "Carol"]))  # Alice
+```
 
 ## 函式 (Functions)
 
